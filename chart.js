@@ -12,38 +12,27 @@ const sampleData = [
 const spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple bar chart showing population of different categories",
-    "data": {
+    width: 500,
+    height: 300,
+    data: {
         "values": sampleData
     },
-    "mark": "bar",
-    "encoding": {
-        "x": {
+    mark: {
+        type: "bar"
+    },  
+    encoding: {
+        x: {
             "field": "category",
             "type": "nominal",
-            "title": "Category"
+            "title": ""
         },
-        "y": {
+        y: {
             "field": "value",
             "type": "quantitative",
-            "title": "Value"
-        },
-        "color": {
-            "field": "category",
-            "type": "nominal",
-            "scale": {
-                "scheme": "category10"
-            },
-            "legend": null
+            "title": ""
         }
-    },
-    "width": 600,
-    "height": 300,
-    "config": {
-        "bar": {
-            "cornerRadius": 4
-        }
-    }
+    }    
 };
 
 // Embed the visualization in the container
-vegaEmbed('#vis', spec)
+vegaEmbed("#vis", spec)
